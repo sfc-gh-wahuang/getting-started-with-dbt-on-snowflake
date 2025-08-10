@@ -8,5 +8,5 @@ select * from semantic_view(
     DIMENSIONS
         orders.city,
         orders.brand,
-        orders.order_month
+        orders.order_timestamp
 )

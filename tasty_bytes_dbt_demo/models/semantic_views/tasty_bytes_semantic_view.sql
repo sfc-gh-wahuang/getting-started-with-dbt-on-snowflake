@@ -17,12 +17,9 @@ DIMENSIONS (
     WITH SYNONYMS = ('truck brand', 'food brand')
     COMMENT = 'Brand name of the food truck',
 
-  DATE(orders.order_ts) AS orders.order_date
-    WITH SYNONYMS = ('date', 'purchase date')
-    COMMENT = 'Date when the order was placed',
-
-  DATE_TRUNC('month', orders.order_ts) AS orders.order_month
-    COMMENT = 'Month when order was placed'
+  orders.order_ts AS orders.order_timestamp
+    WITH SYNONYMS = ('order time', 'purchase time')
+    COMMENT = 'When the order was placed'
 )
 
 METRICS (
