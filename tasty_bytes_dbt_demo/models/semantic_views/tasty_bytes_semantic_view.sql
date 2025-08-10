@@ -15,11 +15,7 @@ DIMENSIONS (
 
   orders.truck_brand_name AS orders.brand
     WITH SYNONYMS = ('truck brand', 'food brand')
-    COMMENT = 'Brand name of the food truck',
-
-  orders.order_ts AS orders.order_timestamp
-    WITH SYNONYMS = ('order time', 'purchase time')
-    COMMENT = 'When the order was placed'
+    COMMENT = 'Brand name of the food truck'
 )
 
 METRICS (

@@ -7,6 +7,5 @@ select * from semantic_view(
         orders.order_count
     DIMENSIONS
         orders.city,
-        orders.brand,
-        orders.order_timestamp
+        orders.brand
 )
