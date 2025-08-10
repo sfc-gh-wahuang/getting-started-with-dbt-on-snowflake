@@ -5,7 +5,9 @@ TABLES (
 )
 
 FACTS (
-  orders.order_id as order_id
+  orders.order_id as order_id,
+  orders.order_total as order_total,
+  orders.customer_id as customer_id
 )
 
 DIMENSIONS (
@@ -16,17 +18,4 @@ DIMENSIONS (
   orders.truck_brand_name AS brand
     WITH SYNONYMS = ('truck brand', 'food brand')
     COMMENT = 'Brand name of the food truck'
-)
-
-METRICS (
-  total_revenue AS SUM(orders.order_total)
-    WITH SYNONYMS = ('revenue', 'sales')
-    COMMENT = 'Total revenue from orders',
-
-  order_count AS COUNT(DISTINCT orders.order_id)
-    WITH SYNONYMS = ('orders', 'number of orders')
-    COMMENT = 'Total number of orders',
-
-  customer_count AS COUNT(DISTINCT orders.customer_id)
-    COMMENT = 'Number of unique customers'
 )
